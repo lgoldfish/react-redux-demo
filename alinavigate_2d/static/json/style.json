@@ -1,0 +1,259 @@
+{
+  "Frame": {
+    "type": "inherit",
+    "common": {
+      "style": {
+        "color": "#ab893e",
+        "weight": 3,
+        "opacity": 1,
+        "fillColor": "#f4f2ef",
+        "fillOpacity": 1,
+        "lineCap": null,
+        "lineJoin": null,
+        "clickable": true,
+        "radius": 0.8
+      }
+    }
+  },
+  "Area": {
+    "type": "inherit",
+    "common": {
+      "style": {
+        "color": "#6c6d6e",
+        "weight": 0.15,
+        "opacity": 1,
+        "fillColor": "#f4eee1",
+        "fillOpacity": 1,
+        "lineCap": null,
+        "lineJoin": null,
+        "clickable": true,
+        "radius": 0.8
+      }
+    },
+    "filter": [{
+      "property": "category",
+      "values": {
+        "23062000":{"fillColor":"#FFF"},
+        "23999000":{"fillColor":"#EaEaEa"}
+
+      }
+    }]
+  },
+  "AreaText": {
+    "type": "inherit",
+    "common": {
+      "style": {
+        "color": "#555",
+        "weight": 1,
+        "opacity": 0,
+        "fillColor": "#f4eee1",
+        "fillOpacity": 0,
+        "lineCap": null,
+        "lineJoin": null,
+        "clickable": true,
+        "radius": 0.8,
+        "label": {
+          "boundPolygon": true,
+          "opacity": 0,
+          "fill": true,
+          "stroke": false,
+          "color": "#000",
+          "fillOpacity": 1,
+          "fillColor": "#454545",
+          "textAlign": "center",
+          "textBaseline": "middle",
+          "font": "13px/1.4 \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, STHeiTi, arial, sans-serif",
+          "textContent": "%name%"
+        }
+      }
+    },
+    "filter": [{
+      "property": "category",
+      "values": {
+        "33042000": {"label": {"fillOpacity": 0}}
+      }
+    }]
+  },
+
+  "FacilityPolygon": {
+    "type": "inherit",
+    "common": {
+      "style": {
+        "color": "#555",
+        "weight": 1,
+        "opacity": 1,
+        "fillColor": "#f4eee1",
+        "fillOpacity": 1,
+        "lineCap": null,
+        "lineJoin": null,
+        "clickable": true,
+        "radius": 0.8,
+        "label": {
+          "boundPolygon": true,
+          "opacity": 0,
+          "fill": true,
+          "stroke": false,
+          "color": "#000",
+          "fillOpacity": 1,
+          "fillColor": "#454545",
+          "textAlign": "center",
+          "textBaseline": "middle",
+          "font": "13px/1.4 \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, STHeiTi, arial, sans-serif",
+          "textContent": "%id%"
+        }
+      }
+    }
+  },
+  "FacilityIcon": {
+    "type": "Icon",
+    "common": {
+      "style": {
+        "rotate": 0,
+        "url": "images/facilities/%category%.png",
+        "size": [12, 12],
+        "fixedSize": {"icon": ["1.2m", "1.2m"]}
+      }
+    },
+    "filter": [{
+      "property": "texture",
+      "values": {
+        "123": {
+          "url": "123.jpg"
+        }
+      }
+    }]
+  },
+
+  "Logo": {
+    "type": "Icon",
+    "common": {
+      "style": {
+        "rotate": 0,
+        "url": "images/logos/1689.png",
+        "size": [18, 18],
+        "fixedSize": {"icon": ["1.8m", "1.8m"]}
+      }
+    },
+    "filter": [{
+      "property": "id",
+      "values": {
+        "1689": {
+          "rotate": 0,
+          "url": "images/logos/1689.png",
+          "size": [50, 20],
+          "fixedSize": {"icon": ["5.0m", "2.0m"]}
+        }
+      }
+    }]
+  },
+
+  "dotNavi": {
+    "type": "MultiPoint",
+    "common": {
+      "style": {
+        "radius": 0.5
+      }
+    }
+  },
+  "Navi": {
+    "type": "MultiLineString",
+    "common": {
+      "style": {
+        "color": "#7db51b",
+        "weight": 2,
+        "opacity": 1,
+        "fillColor": "#7db51b",
+        "fillOpacity": 1,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "clickable": false,
+        "radius": 0.8,
+        "dashArray": [5, 10],
+        "arrow": true
+      }
+    }
+  },
+  "Heatmap": {
+    "type": "Heatmap",
+    "common": {
+      "style": {
+        "radius": 0.8,
+        "maxOpacity": 0.3,
+        "scaleRadius": true,
+        "useLocalExtrema": true
+      }
+    }
+  },
+  "TransitPointsCircle": {
+    "type": "MultiPoint",
+    "common": {
+      "style": {
+        "color": "#FF69B4",
+        "weight": 0.8,
+        "opacity": 1,
+        "fillColor": "#FFB6C1",
+        "fillOpacity": 0.5,
+        "radius": 0.3
+      }
+    }
+  },
+  "TransitPointsMarker": {
+    "type": "MultiPoint",
+    "common": {
+      "style": {
+        "rotate": 0,
+        "url": "../../resources/images/marker_icon@2x.png",
+        "size": [21, 27],
+        "fixedSize": {"icon": ["1.8m", "1.8m"]}
+      }
+    }
+  },
+  "LogoLabel": {
+    "type": "Annotation",
+    "common": {
+      "style": {
+        "logo": {
+          "url": "http://api.ipalmap.com/logo/32/%logo%",
+          "defaultUrl": "http://api.ipalmap.com/logo/32/5e10259b419c87d70d2fa0664c6b5a13",
+          "size": [24, 24]
+        },
+        "label": {
+          "opacity": 1,
+          "fill": true,
+          "stroke": true,
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "fillColor": "#606060",
+          "textAlign": "center",
+          "textBaseline": "middle",
+          "font": "13px/1.4 \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, STHeiTi, arial, sans-serif",
+          "textContent": "%name%"
+        }
+      }
+    }
+  },
+  "Facility": {
+    "type": "Annotation",
+    "common": {
+      "style": {
+        "logo": {
+          "url": "http://api.ipalmap.com/logo/32/%logo%",
+          "defaultUrl": "http://api.ipalmap.com/logo/32/5e10259b419c87d70d2fa0664c6b5a13",
+          "size": [24, 24]
+        },
+        "label": {
+          "opacity": 1,
+          "fill": true,
+          "stroke": true,
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "fillColor": "#606060",
+          "textAlign": "center",
+          "textBaseline": "middle",
+          "font": "13px/1.4 \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, STHeiTi, arial, sans-serif",
+          "textContent": null
+        }
+      }
+    }
+  }
+}
