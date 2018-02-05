@@ -17,7 +17,10 @@ mapMng.initMap().then(()=>{
     aliLocation.start()
     setInterval(()=>{
         var data = aliLocation.getLocation();
-        // data = {x: 13508856.233100427, y: 3661281.7272336474,floor:1849233} 
+        // data = {x: 13361607.932468172, y: 3539748.7420764375,floor:3400625} 
+        data = {x: 13361593.7500057, y: 3539716.01548276,floor:3400625} 
+        data.x += Math.random()
+        data.y += Math.random()
         if(mapView.layerGroup){
             mapView.sceneManager.setPosition(mapView.layerGroup.getLayer("locMarker"),"id",1,data.x,data.y,0.2);
         }

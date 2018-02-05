@@ -3,7 +3,7 @@ class Marker {
         this.mapView = mapView
     }
     setEndMarker(endCoord){
-        this.mapView.endMarker = new NGR.layer.FeatureLayer("endMarker", mapView.styleGenerator);
+        this.mapView.endMarker = new NGR.layer.FeatureLayer("endMarker", this.mapView.styleGenerator);
         this.mapView.endMarker.coordinateSystem = this.mapView.coordinateSystem
         var point = NGR.geom.GeometryFactory.createPoint([endCoord.x, endCoord.y])
         var endFeature = new NGR.data.Feature(point, { id: 1 });
@@ -11,7 +11,7 @@ class Marker {
         this.mapView.layerGroup.addLayer(this.mapView.endMarker);
     }
     setStartMarker(startCoord){
-        this.mapView.startMarker = new NGR.layer.FeatureLayer("startMarker", mapView.styleGenerator);
+        this.mapView.startMarker = new NGR.layer.FeatureLayer("startMarker", this.mapView.styleGenerator);
         this.mapView.startMarker.coordinateSystem = this.mapView.coordinateSystem
         var point = NGR.geom.GeometryFactory.createPoint([startCoord.x,startCoord.y])
         var startFeature = new NGR.data.Feature(point, { id: 1 });

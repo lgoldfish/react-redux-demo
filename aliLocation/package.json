@@ -1,0 +1,11 @@
+{
+  "name": "alication",
+  "version": "1.0.0",
+  "description": "- 支持H5通过支付宝扫描周边Beacon信息\r - 通过图聚云端定位引擎实时获取定位信息",
+  "main": "alipaydemo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

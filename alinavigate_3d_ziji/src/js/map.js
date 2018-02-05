@@ -19,7 +19,7 @@ class MapMng {
        await this.dataSource.requestMaps().then((maps)=>{
            this.dataSource.requestPOIChildren(maps.list[0].poi)
             .then((floors)=>{
-               const floorId = floors[1].id
+               const floorId = floors[3].id
                this.mapView.floorsData = floors
                this.mapView.currentfloor = floorId
                this.dataSource.requestPlanarGraph(floorId)
@@ -50,8 +50,9 @@ class MapMng {
                         let aliNaviOptions = {
                             dataSource:this.dataSource,mapView:this.mapView,styleGenerator:this.styleGenerator,naviLayerid:"navi"
                         }
-                        this.aliNaviMng = new NGR.navi.aliNaviMng(aliNaviOptions)
-                        new AddLight(this.mapView,this.styleGenerator).addLight()
+                        this.aliNaviMng = new NGR.navi.AliNaviMng(aliNaviOptions)
+                        this.addLight = new AddLight(this.mapView,this.styleGenerator)
+                        this.addLight.addLight()
                         zoomLimit(this.mapView)
                         new Control(this.mapView).compassControl()
                     })
@@ -67,6 +68,25 @@ class MapMng {
         })
         .catch((e)=>{
            console.error("3",e,e.stack)
+        })
+    }
+    floorChange(floorId){
+        this.dataSource.requestPlanarGraph(floorId).then((layerInfo)=>{
+            this.mapView.drawPlanarGraphExt(layerInfo, {gradually: true}, ()=> {
+                this.mapView.currentfloor = floorId 
+                this.mapView.layerGroup = mapView.getLayer(this.mapView.currentfloor);
+                this.markerMng.setLocMarker()
+                this.addLight.addLight()
+                this.mapView.gestureManager.on('singleTap', pickPOI)
+                if(this.mapView.isHasNavLine){
+                    this.aliNaviMng.initNavi(mapView.currentfloor).then(()=>{
+                        console.log("导航线出来了")
+                    })
+                }
+            })
+        })
+        .catch((e)=>{
+            console.error("error",e)
         })
     }
 }

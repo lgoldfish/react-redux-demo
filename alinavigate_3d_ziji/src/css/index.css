@@ -53,3 +53,23 @@ body {
     background: #FFFFFF;
     color: #000000;
 }
+.floorControl {
+    width: 120px;
+    position: fixed;
+    bottom: 10px;
+    z-index: 10;
+    display: flex;
+    margin: 0 auto;
+    left: calc(50% - 60px);
+    justify-content: space-between;
+}
+.floorControl div {
+    width: 50px;
+    height: 30px;
+    background: #000000;
+    color: #FFFFFF;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+}

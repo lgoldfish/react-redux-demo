@@ -11,7 +11,8 @@ const extractTextPlugin = require("extract-text-webpack-plugin");
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports = {
         entry:{
-            main: "./src/main.js"
+            main: "./src/main.js",
+            // "ngr.min":"./static/js/ngr.min.js"
         },
         output: {
             path: path.resolve( __dirname , "dist"),
@@ -23,7 +24,7 @@ module.exports = {
            contentBase:path.resolve(__dirname),
            host:"10.0.10.13",
            compress:true,
-           port:1717,
+           port:1718,
            publicPath: '/'
         },
 

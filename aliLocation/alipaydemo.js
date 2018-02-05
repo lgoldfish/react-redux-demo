@@ -3,7 +3,7 @@
 aliLocation.init({
     debug:false,
     uuids:["FDA50693-A4E2-4FB1-AFCF-C6EB07647825"],
-    port:40010
+    port:40420
 })
 aliLocation.start()
 setInterval(function() {

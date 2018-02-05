@@ -11,6 +11,7 @@ export const pickPOI = (e)=>{
       return;
     }
     feature = obj.feature;
+    console.log("feature",feature)
     let offset = mapView.coordinateSystem.getOffset();
     if(coordType == "end"){
         mapView.endCoord = {
@@ -51,11 +52,12 @@ $(".button_list button").eq(2).click(()=>{
     $(".button_list button").eq(3).attr("disabled",false).siblings().attr("disabled",true)
     console.log("mapMng is ",mapMng)
     $(".dynavi").attr("disabled",false)
+    mapView.isHasNavLine = true
     coordType = ""
     aliNaviMng = mapMng.aliNaviMng
     aliNaviMng.setStartPosition(mapView.startfloor,mapView.startCoord)
     aliNaviMng.setEndPosition(mapView.endfloor,mapView.endCoord)
-    aliNaviMng.initNavi(mapView.currentfloor).then(()=>{
+    aliNaviMng.initNavi({currentfloor: mapView.currentfloor,is3d:true}).then(()=>{
         console.log("导航线出来了")
     })
 })
@@ -66,6 +68,7 @@ $(".button_list button").eq(3).click(()=>{
     mapView.isDyNavi = false
     markerMng.removeMarker()
     aliNaviMng.endNavigate()
+    mapView.isHasNavLine = false
 
 })
 // 动态导航
@@ -73,3 +76,13 @@ $(".button_list button").eq(4).click(()=>{
     console.log("动态导航")
     mapView.isDyNavi = true
 })
+//楼层切换 
+$(".floorControl div").eq(0).click(()=>{
+    mapMng.floorChange(1849195)
+    console.log("F1")
+})
+$(".floorControl div").eq(1).click(()=>{
+    console.log("F7")
+    mapMng.floorChange(1849233)
+})
+

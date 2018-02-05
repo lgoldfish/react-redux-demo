@@ -207,11 +207,13 @@
 				"style": {
 					"type": "LineString",
 					"color": "0xE96924",
-					"texture": "./static/images/dashLine.png",
+					"texture":"./static/images/dashLine.png",
 					"width": 1,
 					"2d": false,
 					"tension": 0.1,
-					"depthTest": false
+					"depthTest": false,
+					"lineCap": null,
+					"lineJoin": null
 				}
 			}
 		},

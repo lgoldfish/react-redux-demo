@@ -8,7 +8,7 @@
                 }
 
 // 初始化当航线管理器
-# const aliNaviMng =  new NGR.navi.aliNaviMng(aliNaviOptions)
+# const aliNaviMng =  new NGR.navi.AliNaviMng(aliNaviOptions)
 
 //设置起点位置
 # aliNaviMng.setStartPosition(floorId, coord);

@@ -12,7 +12,7 @@ var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports = {
         entry:{
             main: "./src/main.js",
-            "ngr.min":"./static/js/ngr.min.js"
+            // "ngr.min":["./src/NGR/NGR.min.js","./src/NGR/NGR.navi.js","./src/NGR/NGR.audio.js"]
         },
         output: {
             path: path.resolve( __dirname , "dist"),
@@ -23,7 +23,7 @@ module.exports = {
         devServer: {
            contentBase:path.resolve(__dirname),
            host:"10.0.10.13",
-           compress:true,
+           compress:false,
            port:1717,
            publicPath: '/'
         },
@@ -80,7 +80,7 @@ module.exports = {
     },
 
     plugins: [
-        new uglify(),
+        // new uglify(),
         new webpack.BannerPlugin('alipay'),
         new HtmlWebpackPlugin({
             minify:{
@@ -109,9 +109,9 @@ module.exports = {
             to:'css'
         }]),
         new extractTextPlugin("css/[main].css"),
-        // new webpack.optimize.CommonsChunkPlugin({
-        //     name: 'common'
-        // }), 
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'common'
+        }), 
         new OptimizeCssAssetsPlugin({
             cssProcessorOptions: {  // 引入cssnano后，可在此处配置css压缩规则
                 mergeLonghand: false,

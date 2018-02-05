@@ -23,7 +23,7 @@ module.exports = {
            contentBase:path.resolve(__dirname),
            host:"10.0.10.13",
            compress:true,
-           port:1717,
+           port:1719,
            publicPath: '/'
         },
 

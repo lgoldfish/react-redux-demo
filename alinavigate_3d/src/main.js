@@ -12,7 +12,8 @@ mapMng.initMap().then(()=>{
     aliLocation.init({
         debug:false,
         uuids:["FDA50693-A4E2-4FB1-AFCF-C6EB07647825"],
-        port:40000
+        // port:40000//办公室
+        port:40420 //阿里园区
     })
     aliLocation.start()
     setInterval(()=>{
