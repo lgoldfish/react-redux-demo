@@ -57,20 +57,20 @@
           "opacity": 0,
           "fill": true,
           "stroke": false,
-          "color": "#000",
+          "color": "#000000",
           "fillOpacity": 1,
           "fillColor": "#454545",
           "textAlign": "center",
           "textBaseline": "middle",
           "font": "13px/1.4 \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, STHeiTi, arial, sans-serif",
-          "textContent": "%name%"
+          "textContent": "%display%"
         }
       }
     },
     "filter": [{
       "property": "category",
       "values": {
-        "33042000": {"label": {"fillOpacity": 0}}
+        "33042000": {"label": {"fillOpacity": 1}}
       }
     }]
   },
@@ -168,8 +168,9 @@
         "lineJoin": "round",
         "clickable": false,
         "radius": 0.8,
-        "dashArray": [5, 10],
-        "arrow": true
+        "dashArray": [10, 0],
+        "arrow": false,
+        "weight":5
       }
     }
   },

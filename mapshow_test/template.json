@@ -1,0 +1,308 @@
+{
+	"default": {
+		"Frame": {
+			"renderer": {	
+				"type": "simple",
+				"style": {
+					"type": "Polygon",
+					"light": true,
+					"face": {
+						"height": -0.5,
+						"lineHeight": -0.48,
+						"color": "0xFFFFFF",
+						"outline": {
+							"color": ""
+						}
+					},
+					"bevelEnabled": true,
+					"bevelSize": 1
+				}
+			}
+		},
+		"Area": {
+			"renderer": {
+				"type": "unique",
+				"keys": ["category"],
+				"default": {
+					"type": "Polygon",
+					"light": true,
+					"polygonMerge": true,
+					"outlineBlending": false,
+					"face": {
+						"height": 1.5,
+						"lineHeight": 1.52,
+						"color": "0xb0d1f4",
+						"font": "arial",
+						"opacity": "0.85"
+					},
+					"outline": {
+						"color": "0xB7B5C9"
+					}
+				},
+				"styles": {
+					"37000000|22082000": {
+						"type": "Polygon",
+						"face": {
+							"height": 0.12,
+							"lineHeight": 0.13999999999999999,
+							"color": "0xfed577"
+						},
+						"outline": {
+							"color": "0xfed577"
+						},
+						"clickable": false
+					},
+					"13\\d{6}": {
+						"type": "Polygon",
+						"face": {
+							"height": 0.12,
+							"lineHeight": 0.13999999999999999,
+							"color": "0xE1F3F8"
+						},
+						"outline": {
+							"color": "0xE1F3F8"
+						},
+						"clickable": false
+					},
+					"33000000|22086000": {
+						"type": "Polygon",
+						"face": {
+							"height": 0.12,
+							"lineHeight": 0.13999999999999999,
+							"color": "0xffffff"
+						},
+						"outline": {
+							"color": "0xffffff"
+						},
+						"clickable": false
+					},
+					"23999000": {
+						"type": "Polygon",
+						"face": {
+							"height": 1.5,
+							"lineHeight": 1.52,
+							"color": "0xDFDFDF"
+						},
+						"outline": {
+							"color": "0xBABABA"
+						},
+						"clickable": false
+					},
+					"24092000|24091000": {
+						"type": "Polygon",
+						"face": {
+							"height": 3.5,
+							"lineHeight": 3.52,
+							"color": "0xf8e71c"
+						},
+						"outline": {
+							"color": "0xffffff"
+						},
+						"clickable": true
+					},
+					"15000000": {
+						"type": "Polygon",
+						"face": {
+							"height": 1.5,
+							"lineHeight": 1.52,
+							"color": "0xE1F3F8"
+						},
+						"outline": {
+							"color": "0xbfbfbf"
+						},
+						"clickable": false
+					},
+					"22001000|22002000|22003000|22004000": {
+						"type": "Polygon",
+						"face": {
+							"height": 0.15,
+							"lineHeight": 0.16999999999999998,
+							"color": "0xf46e65"
+						},
+						"outline": {
+							"color": "0xFFFFFF"
+						},
+						"clickable": true
+					},
+					"35002000": {
+						"type": "Polygon",
+						"face": {
+							"height": 0.1,
+							"lineHeight": 0.12000000000000001,
+							"color": "0xceefb9"
+						},
+						"outline": {
+							"color": "0xceefb9"
+						},
+						"clickable": false
+					},
+					"17004000": {
+						"type": "Polygon",
+						"face": {
+							"height": 0.08,
+							"lineHeight": 0.1,
+							"color": "0x89919b"
+						},
+						"outline": {
+							"color": "0x89919b"
+						},
+						"clickable": false
+					},
+					"11401000": {
+						"type": "Polygon",
+						"face": {
+							"height": 0.08,
+							"lineHeight": 0.1,
+							"color": "0xE0F3F8"
+						},
+						"outline": {
+							"color": "0x89919b"
+						},
+						"clickable": false
+					}
+				}
+			}
+		},
+		"AreaText": {
+			"renderer": {
+				"type": "simple",
+				"style": {
+					"type": "Annotation",
+					"color": "0x000000",
+					"font": "30px -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Ubuntu, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Hiragino Kaku Gothic Pro\", Meiryo, \"Malgun Gothic\", \"Helvetica Neue\", Helvetica, sans-serif",
+					"outlineWidth": 3,
+					"outlineColor": "0xffffff",
+					"field": "display",
+					"anchor": [0.5, 1],
+					"collision": true,
+					"depthTest": true,
+					"z": 2,
+					"margin": -2
+				}
+			}
+		},
+		"Facility": {
+			"renderer": {
+				"type": "unique",
+				"keys": ["category"],
+				"default": {
+					"type": "Icon",
+					"serverUrl": "https://api.ipalmap.com/logo/64/",
+					"field": "logo",
+					"anchor": [0.5, 1],
+					"width": 40,
+					"height": 40,
+					"collision": true,
+					"depthTest": true,
+					"z": 1.8,
+					"margin": 0
+				},
+				"styles": {
+				}
+			}
+		},
+		"navi": {
+			"renderer": {
+				"type": "simple",
+				"style": {
+					"type": "LineString",
+					"color": "0xE96924",
+					"texture":"./static/images/dashLine.png",
+					"width": 1,
+					"2d": false,
+					"tension": 0.1,
+					"depthTest": false,
+					"lineCap": null,
+					"lineJoin": null
+				}
+			}
+		},
+		"startMarker": {
+			"renderer": {
+				"type": "simple",
+				"style": {
+					"type": "Icon",
+					"texture": "./static/images/marker_start@2x.png",
+					"anchor": [0.5, 1],
+					"width": 61,
+					"height": 74,
+					"collision": false,
+					"depthTest": false,
+					"z": 0.2
+				}
+			}
+		},
+		"endMarker": {
+			"renderer": {
+				"type": "simple",
+				"style": {
+					"type": "Icon",
+					"texture": "./static/images/marker_end@2x.png",
+					"anchor": [0.5, 1],
+					"width": 61,
+					"height": 77,
+					"collision": false,
+					"depthTest": false,
+					"z": 0.2
+				}
+			}
+		},
+		"pickMarker": {
+			"renderer": {
+				"type": "simple",
+				"style": {
+					"type": "Icon",
+					"texture": "../images/marker_me@2x.png",
+					"anchor": [0.5, 1],
+					"width": 40,
+					"height": 40,
+					"collision": false,
+					"depthTest": true,
+					"z": 0.2
+				}
+			}
+		},
+		"locMarker": {
+			"renderer": {
+				"type": "simple",
+				"style": {
+					"type": "Icon",
+					"texture": "./static/images/position_point.png",
+					"width": 17,
+					"height": 17,
+					"depthTest": false,
+					"plane": true,
+					"z": 0.2
+				}
+			}
+		},
+		"light": {
+			"renderer": {
+				"type": "simple",
+				"style": {
+					"type": "Light",
+					"lightType": "HemisphereLight",
+					"intensity": 1.1,
+					"color": "0xffffff",
+					"options": {
+						"groudColor": "0x5A5A5A"
+					}
+				}
+			}
+		},
+		"navigatorModel": {
+			"renderer": {
+				"type": "simple",
+				"style": {
+					"type": "Model",
+					"path": "../images/models/navigator.obj",
+					"rotate": [1.56, 3.323827374128043, 0],
+					"scale": [0.001, 0.001, 0.001],
+					"params": {
+						"mtl": "../images/models/navigator.mtl"
+					}
+				}
+			}
+		}
+	}
+}

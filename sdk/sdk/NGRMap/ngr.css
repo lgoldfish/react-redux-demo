@@ -1,0 +1,167 @@
+button {
+	border: none;
+}
+
+button[disabled] {
+	opacity: 0.45;
+}
+
+.ngrCtrl {
+	clear: both;
+	pointer-events: auto;
+}
+ .floorControl {
+	/* position: absolute; */
+	/* bottom: 65px; */
+	/* left: 15px; */
+	margin-left: 15px;
+	margin-bottom: 15px;
+	font-size: 18px;		
+	box-shadow: 0 1px 2px 0 rgba(71, 82, 102, 0.2);;
+	border-radius: 4px;
+	overflow: hidden;
+	background: #fff;
+}
+
+.floorList {
+	margin: 0;
+	padding: 0;
+	max-height: 108px;
+	overflow: auto;
+	width: fit-content;
+}
+
+.floorControl .floorList .active {
+	background: #E5F5FE;
+	color: #00A2F5;
+}
+
+.floorList .floorItem {
+	width: 36px;
+	height: 36px;
+	font-size: 14px;
+	font-weight: 500;
+	color: #475266;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid #d1d4d6;
+}
+
+.zoom {
+	margin: 15px;
+	box-shadow: 0 1px 2px 0 rgba(71, 82, 102, 0.2);
+	background: #fff;
+	border-radius: 4px;
+}
+
+.zoom button {
+	display: block;
+	text-align: center;
+	padding: 0;
+	background: none;
+	outline: none;
+	width: 36px;
+	height: 37px;
+	-webkit-tap-highlight-color: #ccc;	
+}
+
+.zoom button:active {
+	background: #ccc;
+}
+
+.zoomInBtn {
+	border-bottom: 1px solid #d1d4d6;
+	border-radius: 4px 4px 0 0; 
+}
+
+.zoomOutBtn {
+	border-radius: 0 0 4px 4px; 
+}
+
+.zoom button img {
+	width: 20px;
+	height: 20px;
+}
+
+.compass {
+	display: flex;
+	margin: 15px;
+}
+
+.compass img{
+	width: 36px;
+	height: 36px;
+}
+
+.scaleControl {
+	margin: 0 15px 15px 15px;
+}
+
+.scaleControl img {
+	width: 60px;
+	height: 22px;
+}
+
+.scale {
+	position: relative;
+	font-size: 12px;
+	border-bottom: 2px solid #475266;
+	text-align: center;
+	padding-bottom: 2px;
+}
+
+.scale::before {
+	content: '';
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 2px;
+    background-color: #475266;
+    left: 0;
+}
+
+.scale::after {
+	content: '';
+    position: absolute;
+    bottom: 0;
+	height: 2px;
+    width: 2px;
+    background-color: #475266;
+    right: 0;
+}
+
+.locate {
+	width: 36px;
+	height: 36px;
+	margin: 0 0 15px 15px;
+	border-radius: 4px;
+	background: #fff url('./assets/ic_dingweidian@2x.png') 50% no-repeat;
+	background-size: 70%;
+	box-shadow: 0 1px 2px 0 rgba(71, 82, 102, 0.2);;
+}
+
+.locateCenter {
+	background-image: url('./assets/ic_daohang2@2x.png');
+}
+
+.locate3d {
+	background-image: url('./assets/ic_daohang@2x.png');
+}
+
+.view {
+	width: 36px;
+	height: 36px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 36px;
+	box-shadow: 0 1px 2px 0 rgba(71, 82, 102, 0.2);
+	margin: 15px;
+	background: #fff;
+	border-radius: 4px;
+	-webkit-tap-highlight-color: #ccc;
+}
+
+.view:active {
+	background: #ccc;
+}

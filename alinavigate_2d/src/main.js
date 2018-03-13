@@ -4,12 +4,12 @@
    let audioProvider = new NGR.AudioProvider()
    audioProvider.playMessage("欢迎使用图聚定位")
     window.map = new NGR.View('map', {
-        appKey: "f9dbdaf8473a4039ac7226c2180ce5f1"
+        appKey: "9b5d9a6ee52441a29bafd8617b0474e2"
     });
     window.dataSource = new NGR.DataSource({
-        appKey: "f9dbdaf8473a4039ac7226c2180ce5f1"
+        appKey: "9b5d9a6ee52441a29bafd8617b0474e2"
     });
-    let aliNaviMng = new NGR.AliNaviMng("f9dbdaf8473a4039ac7226c2180ce5f1",map)
+    let aliNaviMng = new NGR.AliNaviMng("9b5d9a6ee52441a29bafd8617b0474e2",map)
     window.layers = {};
     dataSource.requestMaps().then(function (maps) {
         dataSource.requestPOIChildren(maps.list[0].poi).then(function(floors) {
@@ -32,9 +32,14 @@
                         layerType: 'Facility',
                         styleConfig: style
                     });
+                    layers.annotation = NGR.featureLayer(layerInfo.Area, {
+                        layerType: 'LogoLabel',
+                        styleConfig: style
+                    });
                     layers.collision = NGR.layerGroup.collision({
                         margin: 3
                     });
+                    layers.collision.addLayer(layers.annotation);
                     layers.collision.addLayer(layers.facility);
                     map.addLayer(layers.frame);
                     map.addLayer(layers.area);
@@ -120,13 +125,13 @@ $(".dyNavi").on("click",()=>{
 aliLocation.init({
     debug:false,
     uuids:["FDA50693-A4E2-4FB1-AFCF-C6EB07647825"],
-    port:40000
+    port:40420
 })  
 aliLocation.start()
 let lastMessage
 setInterval(()=>{
     let data = aliLocation.getLocation()
-    data = {x:13508843.59299286,y:3661283.775377244,floor:1849233,dr:0.000849}
+    // data = {x:13508843.59299286,y:3661283.775377244,floor:1849233,dr:0.000849}
     if(data.x == 0){
         return
     }

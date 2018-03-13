@@ -1,0 +1,7 @@
+{
+  "targetPath": "shanghaitongren",
+  "version": "",
+  "bucket": "palmap-his",
+  "uploadDir": "dist",
+  "baseUrl": "http://his.ipalmap.com"
+}

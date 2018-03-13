@@ -8,6 +8,7 @@ class MapMng {
     }
 
     async initMap(){
+        console.log("99999")
         this.dataSource = new NGR.data.DataSource({
             appKey:config.appKey,
             server:"https://api.ipalmap.com"
@@ -39,12 +40,16 @@ class MapMng {
                         engine.initMapView(this.mapView,{
                             clearImage:"./static/images/bg/bg_point.png"
                         })
+                        console.log("1000")
+                        // var planarGraph = new NGR.data.PlanarGraph(layerInfo); 
+                        // this.mapView.drawPlanarGraph(planarGraph); 
                         this.mapView.drawPlanarGraphExt(layerInfo, {gradually: true}, ()=> {
                             console.log("地图加载完成")
                             this.mapView.layerGroup = mapView.getLayer(this.mapView.currentfloor);
                             this.markerMng = new Marker(this.mapView)
                             this.markerMng.setLocMarker()
                         });
+                        console.log("1001")
                         this.mapView.start()
                         this.mapView.gestureManager.on('singleTap', pickPOI)
                         let aliNaviOptions = {

@@ -12,7 +12,7 @@ var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports = {
         entry:{
             main: "./src/main.js",
-            // "ngr.min":"./static/js/ngr.min.js"
+            "ngr.min":["./static/js/ngr.min.js","./static/js/navigate.js"]
         },
         output: {
             path: path.resolve( __dirname , "dist"),
@@ -74,7 +74,7 @@ module.exports = {
     externals: {
         $: 'jQuery',
         NGR: 'NGR',
-        vConsole : "vConsole"
+        // vConsole : "vConsole"
     },
     
     plugins: [
@@ -103,9 +103,9 @@ module.exports = {
             from:path.resolve( __dirname , "static"),
             to:'static'
         }]),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'common'
-        }), 
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: 'common'
+        // }), 
         // new webpack.ProvidePlugin({ jQuery: "jquery", $: "jquery" }),
         //  new uglify()
         new OptimizeCssAssetsPlugin({

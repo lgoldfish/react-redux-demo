@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./ngr.min.js"></script>
+    <script src="./vconsole.min.js"></script>
+</head>
+
+<body>
+    <div id="map" style="width: 100%; height: 100%; margin: 0; padding: 0; position:absolute"></div>
+</body>
+<script>
+    var vconsole = new VConsole()
+
+    console.log("ngr is",NGR)
+    var engine = new NGR.engine.ThreeEngine();
+    window.mapView = new NGR.view.MapView("map");
+    var dataSource = new NGR.data.DataSource({
+        //通过开放平台获取的AppKey
+        'appKey': '9b5d9a6ee52441a29bafd8617b0474e2',
+        server: 'https://api.ipalmap.com',
+    });
+    dataSource.requestMaps().then(function (maps) {
+        //获取第一张可用地图下包含的所有楼层
+        console.log("maps is", maps)
+        dataSource.requestPOIChildren(maps.list[0].poi).then(function (floors) {
+            console.log("floors is", floors)
+            return dataSource.requestPlanarGraph(floors[3].id).then(function (layerInfo) {
+                //此处插入地图数据
+                NGR.fetch('./template.json', {})
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (style) {
+                        var styleGenerator = new NGR.style.JSONStyleGenerator(style);
+                        window.mapView.styleGenerator = styleGenerator;
+                        var camera = new NGR.camera.ThreeCamera(45, window.innerWidth / window.innerHeight, 1, 80000);
+                        //创建相机，并设置相机位置
+                        camera.camera.position.set(0, 0, 100);    //设置MapView的相机视角
+                        window.mapView.activeCamera = camera;    //在引擎中初始化MapView
+                        engine.initMapView(window.mapView);    //根据数据构造平面图
+                        var planarGraph = new NGR.data.PlanarGraph(layerInfo);    //渲染平面图
+                        window.mapView.drawPlanarGraph(planarGraph);    //开始渲染
+                        mapView.start();
+                    })
+                    .catch(onerror);
+            });
+        });
+    }).catch(function (e) {
+        return console.error(e, e.stack);
+    });
+
+</script>
+
+</html>

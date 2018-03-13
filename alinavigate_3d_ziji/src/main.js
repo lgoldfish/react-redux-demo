@@ -1,10 +1,16 @@
-// var vConsole = new VConsole();
+console.log("333")
 import "../src/css/index.css"
+console.log("444")
 import {MapMng} from "./js/map"
+console.log("5555")
+import "../static/js/navigate"
+console.log("6666")
 const mapMng = new MapMng();
+console.log("777",mapMng)
 
 let markerMng ,audioProvider,lastmessageInNavi
 mapMng.initMap().then(()=>{
+    console.log("8888")
     audioProvider = new NGR.AudioProvider()
     audioProvider.open()
     audioProvider.playMessage("欢迎使用图聚智能导航")
@@ -16,7 +22,7 @@ mapMng.initMap().then(()=>{
     })
     aliLocation.start()
     setInterval(()=>{
-        var data = aliLocation.getLocation();
+        var data = aliLocation.getLocation()
         // data = {x: 13361607.932468172, y: 3539748.7420764375,floor:3400625} 
         data = {x: 13361593.7500057, y: 3539716.01548276,floor:3400625} 
         data.x += Math.random()
